@@ -13,7 +13,7 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <i:Interaction.Behaviors>
-        <local:ShowDialogBehavior Messenger="{Binding PubMessenger}"/>
+        <local:ShowDialogBehavior/>
     </i:Interaction.Behaviors>
     <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Text="{Binding DialogResult}"/>

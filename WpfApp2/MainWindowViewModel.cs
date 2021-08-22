@@ -7,8 +7,6 @@ namespace WpfApp2
 {
     class MainWindowViewModel : ObservableRecipient
     {
-        public IMessenger PubMessenger => this.Messenger;
-
         private string dialogResult;
         public string DialogResult 
         {
@@ -27,7 +25,7 @@ namespace WpfApp2
         private void ShowDialogCommandExecute()
         {
             var viewModel = new DialogWindowViewModel();
-            this.Messenger.Send(new ShowDialogMessage { ViewModel = viewModel });
+            WeakReferenceMessenger.Default.Send(new ShowDialogMessage { ViewModel = viewModel });
             this.DialogResult = viewModel.Input;
         }
     }
